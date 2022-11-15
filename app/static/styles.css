@@ -1,0 +1,16 @@
+body {
+    font-size: 1.25rem;
+    background-color: lightcyan;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.navbar {
+    background-color: lightslategray;
+}
+
+.footer {
+    background-color: lightslategray;
+}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="my-3 text-center text-uppercase font-weight-bold p-2">Регистрация пользователя</h2>
+    <form class="container-fluid m-auto bg-white p-5 border round" style="max-width: 50rem;" method="POST" action="{# url_for('books.create') #}" enctype="multipart/form-data">
+        <div class="mb-3 row">
+            <div class="d-flex flex-column">
+                <div class="mb-3">
+                    <label for="name">Логин</label>
+                    <input class="form-control" type="text" name="name" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="name">Пароль</label>
+                    <input class="form-control" type="text" name="pass" id="pass">
+                </div>
+                <div class="mb-3">
+                    <label for="name">Имя</label>
+                    <input class="form-control" type="text" name="first_name" id="first_name">
+                </div>
+                <div class="mb-3">
+                    <label for="name">Фамилия</label>
+                    <input class="form-control" type="text" name="last_name" id="last_name">
+                </div>
+                <div class="mb-3">
+                    <label for="name">Отчество</label>
+                    <input class="form-control" type="text" name="middle_name" id="middle_name">
+                </div>
+                <div class="mb-3">
+                    <label for="category">Пол</label>
+                    <select class="form-select" name="gender" id="gender">
+                        <option>м</option>
+                        <option>ж</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="category">Должность</label>
+                        <select class="form-select" name="post" id="post">
+                            {% for post in posts %}
+                                <option value="{{ post.id }}">{{ post.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <label for="category">Роль</label>
+                    <select class="form-select" name="role" id="role">
+                        <option>м</option>
+                        <option>ж</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+{% endblock %}
